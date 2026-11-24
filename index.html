@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação Fronteira — Rumo à Medicina no Paraguai</title>
+    <meta name="description" content="Ajude nossa família a montar o novo lar no Paraguai nessa jornada rumo à Medicina.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+
+    <!-- HERO -->
+    <header class="relative bg-[#0B2545] text-white overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto px-6 py-14 text-center relative z-10">
+            <span class="inline-block px-3 py-1 rounded-full bg-red-600/20 border border-red-500/30 text-red-300 text-xs font-bold uppercase tracking-wider mb-4">
+                🇵🇾 Campanha Solidária
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+                Operação Fronteira: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-300">
+                    Rumo à Medicina no Paraguai
+                </span>
+            </h1>
+            <p class="mt-4 text-slate-300 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+                Ajude nossa família a montar o novo lar nessa jornada de fé, coragem e recomeço.
+            </p>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 -mt-8 pb-16 relative z-20 space-y-6">
+
+        <!-- CARD DO TERMÔMETRO + PAGAMENTOS -->
+        <section class="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 sm:p-8">
+            <div class="flex flex-wrap justify-between items-end gap-2 mb-3">
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Já arrecadamos</p>
+                    <p id="valor-arrecadado" class="text-3xl sm:text-4xl font-black text-[#0B2545]">R$ 0,00</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Meta Total</p>
+                    <p id="valor-meta" class="text-base font-bold text-slate-600">R$ 0,00</p>
+                </div>
+            </div>
+
+            <!-- Barra de progresso -->
+            <div class="h-6 w-full bg-slate-100 rounded-full overflow-hidden border border-slate-200 shadow-inner">
+                <div id="barra-progresso" class="h-full bg-gradient-to-r from-red-600 to-rose-500 rounded-full transition-all duration-1000 ease-out w-0"></div>
+            </div>
+            <div class="flex justify-between items-center mt-2 text-xs font-bold">
+                <span id="porcentagem-texto" class="text-red-600">0% concluído</span>
+                <span id="falta-texto" class="text-slate-400"></span>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button id="btn-pix" onclick="copiarPix()" class="w-full py-4 px-5 bg-[#0B2545] hover:bg-blue-950 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer">
+                    <i class="fa-solid fa-copy"></i> Copiar Chave Pix
+                </button>
+
+                <a id="btn-cartao" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-regular fa-credit-card"></i> Parcelar no Cartão
+                </a>
+            </div>
+
+            <p class="text-center text-xs text-slate-500 mt-4">
+                Chave Pix (Celular): <strong id="texto-pix" class="text-slate-800"></strong> — <span id="nome-pix"></span>
+            </p>
+
+            <!-- Botão Compartilhar no WhatsApp -->
+            <div class="mt-5 pt-5 border-t border-slate-100 text-center">
+                <a id="btn-whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold text-xs transition-colors border border-emerald-200">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Compartilhar esta campanha no WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- HISTÓRIA -->
+        <section class="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-4">
+            <h2 class="text-lg font-black text-[#0B2545] flex items-center gap-2">
+                <i class="fa-solid fa-heart text-red-600"></i> Nossa História
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Em janeiro, nossa família — <strong>Carol, Davi e nossos três meninos</strong> — embarca em uma grande mudança rumo ao Paraguai para a realização de um sonho: o início da faculdade de Medicina.
+            </p>
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Como faremos toda a viagem de ônibus, temos um limite rígido de bagagem e não conseguimos levar móveis ou presentes físicos na mudança. Por isso, criamos esta campanha transparente para arrecadar o valor necessário e comprar o essencial direto na fronteira.
+            </p>
+            <p class="text-sm text-slate-500 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                <strong>Como você pode fazer parte:</strong> você pode apadrinhar um item da lista abaixo, contribuir com qualquer valor livre via Pix ou parcelar no cartão de crédito. Se não puder contribuir financeiramente agora, compartilhar este link já faz toda a diferença!
+            </p>
+        </section>
+
+        <!-- LISTA DE ITENS -->
+        <section class="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-8">
+            <div>
+                <h2 class="text-lg font-black text-[#0B2545] mb-1">🧳 Enxoval & Utensílios (Para levar na mala)</h2>
+                <p class="text-xs text-slate-400 mb-4">Itens leves que compraremos aqui no Brasil antes de embarcar.</p>
+                <ul id="lista-enxoval" class="divide-y divide-slate-100"></ul>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-black text-[#0B2545] mb-1">🏠 Casa Nova (Para comprar na fronteira)</h2>
+                <p class="text-xs text-slate-400 mb-4">Itens comprados direto lá por melhor custo, tamanho e voltagem (220v).</p>
+                <ul id="lista-fronteira" class="divide-y divide-slate-100"></ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="text-center py-8 px-4 text-xs text-slate-400">
+        <p>Agradecemos de coração por cada contribuição, compartilhamento e oração por essa nova etapa. ❤️</p>
+    </footer>
+
+    <script>
+        // ==========================================================
+        // ⚙️ ÁREA DE CONFIGURAÇÃO (EDITE APENAS AQUI PARA ATUALIZAR)
+        // ==========================================================
+        const CONFIG = {
+            META: 7707.00,           // Soma total dos itens da lista
+            ARRECADADO: 0.00,        // <--- ATUALIZE ESTE VALOR A CADA DOAÇÃO
+            CHAVE_PIX: "21978984540",
+            CHAVE_PIX_FORMATADA: "(21) 97898-4540",
+            NOME_PIX: "Caroline Rocha",
+            LINK_INFINITEPAY: "https://link.infinitepay.io/SEU-LINK-AQUI" // <--- COLE SEU LINK DA INFINITEPAY
+        };
+
+        // Mude "pago: false" para "pago: true" quando alguém apadrinhar um item específico
+        const ITENS_ENXOVAL = [
+            { nome: "Conjunto de Panelas", valor: 200, pago: false },
+            { nome: "Conjunto de Toalhas (1)", valor: 80, pago: false },
+            { nome: "Conjunto de Toalhas (2)", valor: 80, pago: false },
+            { nome: "Lençóis Queen (1)", valor: 80, pago: false },
+            { nome: "Lençóis Queen (2)", valor: 80, pago: false },
+            { nome: "Lençóis Solteiro (1)", valor: 60, pago: false },
+            { nome: "Lençóis Solteiro (2)", valor: 60, pago: false },
+            { nome: "Faqueiro (24 peças - 6un de cada)", valor: 70, pago: false },
+            { nome: "Conjunto de Panos de Prato", valor: 40, pago: false }
+        ];
+
+        const ITENS_FRONTEIRA = [
+            { nome: "Dormitório Crianças (Triliche com gavetas)", valor: 2500, pago: false },
+            { nome: "Cama Box Casal (Colchão + Base nova)", valor: 970, pago: false },
+            { nome: "Mesa nova com 6 cadeiras", valor: 700, pago: false },
+            { nome: "Sofá (Garimpo seminovo)", valor: 600, pago: false },
+            { nome: "Micro-ondas", valor: 450, pago: false },
+            { nome: "Panela de Pressão Elétrica", valor: 357, pago: false },
+            { nome: "Botijão de Gás (Casco + Carga cheia)", valor: 350, pago: false },
+            { nome: "Fogão (Garimpo seminovo)", valor: 300, pago: false },
+            { nome: "Ventilador", valor: 300, pago: false },
+            { nome: "Panela Elétrica (Arroz)", valor: 150, pago: false },
+            { nome: "Sanduicheira Grill", valor: 150, pago: false },
+            { nome: "Liquidificador", valor: 130, pago: false }
+        ];
+        // ==========================================================
+
+        const formatBRL = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        function renderLista(elementId, itens) {
+            const ul = document.getElementById(elementId);
+            ul.innerHTML = itens.map(item => `
+                <li class="py-3 flex justify-between items-center gap-4 ${item.pago ? 'opacity-50' : ''}">
+                    <span class="text-sm font-medium ${item.pago ? 'line-through text-slate-400' : 'text-slate-700'}">
+                        ${item.nome}
+                    </span>
+                    <div class="flex items-center gap-2 shrink-0">
+                        ${item.pago
+                            ? '<span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">Apadrinhado ✓</span>'
+                            : `<span class="text-sm font-bold text-[#0B2545]">${formatBRL(item.valor)}</span>`
+                        }
+                    </div>
+                </li>
+            `).join('');
+        }
+
+        function copiarPix() {
+            navigator.clipboard.writeText(CONFIG.CHAVE_PIX);
+            const btn = document.getElementById("btn-pix");
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Chave Pix Copiada!';
+            btn.classList.replace("bg-[#0B2545]", "bg-emerald-600");
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar Chave Pix';
+                btn.classList.replace("bg-emerald-600", "bg-[#0B2545]");
+            }, 3000);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const porcentagem = Math.min((CONFIG.ARRECADADO / CONFIG.META) * 100, 100).toFixed(1);
+            const falta = Math.max(CONFIG.META - CONFIG.ARRECADADO, 0);
+
+            document.getElementById("valor-arrecadado").innerText = formatBRL(CONFIG.ARRECADADO);
+            document.getElementById("valor-meta").innerText = formatBRL(CONFIG.META);
+            document.getElementById("porcentagem-texto").innerText = `${porcentagem}% concluído`;
+            document.getElementById("falta-texto").innerText = falta > 0 ? `Faltam ${formatBRL(falta)}` : "Meta batida! 🎉";
+            document.getElementById("texto-pix").innerText = CONFIG.CHAVE_PIX_FORMATADA;
+            document.getElementById("nome-pix").innerText = CONFIG.NOME_PIX;
+            document.getElementById("btn-cartao").href = CONFIG.LINK_INFINITEPAY;
+
+            // Link de compartilhamento automático no WhatsApp
+            const msgZap = encodeURIComponent(
+                `Pessoal, passando para compartilhar a campanha de uma família muito querida! A Carol, o Davi e os três filhos estão de mudança para o Paraguai em janeiro para ela iniciar a faculdade de Medicina. Como vão de ônibus, não conseguem levar móveis nem presentes físicos, então criaram essa campanha para ajudar a montar o básico da casa nova lá na fronteira. Quem puder contribuir com qualquer valor (via Pix ou cartão) ou ajudar compartilhando, vai abençoar demais esse sonho! ❤️\n\n👉 ${window.location.href}`
+            );
+            document.getElementById("btn-whatsapp").href = `https://wa.me/?text=${msgZap}`;
+
+            setTimeout(() => {
+                document.getElementById("barra-progresso").style.width = `${porcentagem}%`;
+            }, 250);
+
+            renderLista("lista-enxoval", ITENS_ENXOVAL);
+            renderLista("lista-fronteira", ITENS_FRONTEIRA);
+        });
+    </script>
+</body>
+</html>
